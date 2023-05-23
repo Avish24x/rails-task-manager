@@ -1,0 +1,15 @@
+<h1>My Tasks</h1>
+<ul>
+  <% @tasks.each do |task| %>
+    <li>
+      <p> <% if task.completed  %>
+        <i class="fa-solid fa-square-check" style="color: #7e3da9;"></i> <%= link_to task.title , task_path(task.id)%>
+        <% else %>
+       <i class="fa-solid fa-square" style="color: #7e3da9;"></i> <%= link_to task.title , task_path(task.id)%>
+        <%= link_to "edit the list" , tasks_path %>
+      <% end %>
+
+      </p>
+    </li>
+  <% end %>
+</ul>
